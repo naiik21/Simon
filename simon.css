@@ -1,0 +1,21 @@
+#start{
+    margin-top: 10% ;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#dificultad{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#colores{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
