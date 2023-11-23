@@ -9,6 +9,7 @@ let myInterval;
 let totalGuanyades = parseInt(localStorage.getItem('totalGuanyades')) || 0;
 let totalPerdudes = parseInt(localStorage.getItem('totalPerdudes')) || 0;
 
+
 //Funció que començar el joc
 function start() {
     document.getElementById("start").innerHTML = '';
@@ -93,6 +94,7 @@ function loop(rep) {
 
 //Funció que deja al usuari repetir les opcions de siomon
 function usuario(opcio) {
+
     if (simon[pos] == opcio.id) {
         user.push(opcio.id);
         pos++;
@@ -128,8 +130,13 @@ function comprobacion() {
             correcte++;
         }
     }
-    if (correcte == repG) {
-        alert("Has guanyat");
+    if (correcte == repG-1) {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+        setTimeout(alert("Has guanyat"),50);
         totalGuanyades++;
         localStorage.setItem('totalGuanyades', totalGuanyades);
         vueltas = 0;
